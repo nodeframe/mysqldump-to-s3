@@ -45,9 +45,9 @@ fi
 
 MYSQL_HOST_OPTS="-h $MYSQL_PORT_3306_TCP_ADDR --port $MYSQL_PORT_3306_TCP_PORT -u $MYSQL_ENV_MYSQL_USER -p$MYSQL_ENV_MYSQL_PASSWORD"
 
-mysqladmin $MYSQL_HOST_OPTS processlist
-
-until $? -eq 0; do
+mysqladmin $MYSQL_HOST_OPTS status
+echo "Wating for mysql to start"
+until $CMD | grep Uptime | head -1; do
   printf '.'
   sleep 1
 done
