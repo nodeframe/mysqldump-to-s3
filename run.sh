@@ -53,7 +53,7 @@ cat <<EOF >> /backup.sh
 
 echo "Wating for mysql to start"
 until $CMD | grep Uptime | head -1; do
-  printf '.'
+  printf '\nWating for mysql to start. \n'
   sleep 1
 done
 
