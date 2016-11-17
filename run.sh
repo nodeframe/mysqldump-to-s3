@@ -52,8 +52,8 @@ cat <<EOF >> /backup.sh
 #!/bin/bash
 
 echo "Wating for mysql to start"
-until $CMD | grep Uptime | head -1; do
-  printf '\nWating for mysql to start. \n'
+until [ $($CMD | grep Uptime -c) -gt 0 ]  ; do
+  printf '  => waiting... \n'
   sleep 1
 done
 
