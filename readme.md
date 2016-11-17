@@ -22,6 +22,11 @@ MYSQL_PORT_3306_TCP_PORT   |  T        | MySQL Server port
 MYSQLDUMP_DATABASE         |  T        | MySQL database to be backed up
 
 For example of how to start this container, see below on the developing section
+
+###Use this image
+pull this image from [quay.io](https://quay.io/repository/nodeframe/mysqldump-to-s3)
+
+    docker pull quay.io/nodeframe/mysqldump-to-s3
 _______
 #Developing
 Feel free to config the script as a fork of your project, to test your development or configuration, you can use the following script
