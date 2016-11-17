@@ -14,6 +14,8 @@ ENV AWS_BUCKET **None**
 
 ENV PREFIX **None**
 
+ENV CRON_TIME="0 0 * * *"
+
 ADD run.sh /run.sh
 RUN chmod +x /run.sh
 
