@@ -78,6 +78,6 @@ if [ -n "${INIT_BACKUP}" ]; then
 fi
 
 echo "${CRON_TIME} /backup.sh >> /mysql_backup.log 2>&1" > /crontab.conf
-# crontab  /crontab.conf
+crontab  /crontab.conf
 echo "=> Running cron job"
 exec cron -f

@@ -9,6 +9,8 @@ To use this container, specify those environment variables
 
 Variables                  | Required? | Description
 ---------------------------|-----------|--------------
+CRON_TIME                  |  F        | The crontab schedule time, Default is 0 0 * * *
+INIT_BACKUP                |  F        | Set this to `true` to start the backup right after the container is initiated. (The cron job is still running as usual)
 AWS_ACCESS_KEY_ID          |  T        | The AWS s3 key id [How to get it?](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSGettingStartedGuide/AWSCredentials.html)
 AWS_SECRET_ACCESS_KEY      |  T        | The AWS s3 access key
 AWS_BUCKET                 |  T        | The AWS s3 Bucket name
