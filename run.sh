@@ -59,6 +59,8 @@ until [ \$($CMD | grep Uptime -c) -gt 0 ]  ; do
 done
 
 BACKUP_NAME=\$(date +\%Y.\%m.\%d.\%H\%M\%S)
+AWS_ACCESS_KEY_ID=${AWS_ACCESS_KEY_ID}
+AWS_SECRET_ACCESS_KEY=${AWS_SECRET_ACCESS_KEY}
 
 echo "Starting dump of ${MYSQLDUMP_DATABASE} database(s) from ${MYSQL_PORT_3306_TCP_ADDR}..."
 
