@@ -4,6 +4,8 @@ This docker container will backup a MySQL database using mysqldump, stream it to
 
 There are options where you can run this container script as a cron job.
 
+[![Docker Repository on Quay](https://quay.io/repository/nodeframe/mysqldump-to-s3/status "Docker Repository on Quay")](https://quay.io/repository/nodeframe/mysqldump-to-s3)
+
 ##Options
 To use this container, specify those environment variables
 
