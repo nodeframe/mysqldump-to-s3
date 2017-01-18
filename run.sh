@@ -45,6 +45,7 @@ fi
 
 MYSQL_HOST_OPTS="-h $MYSQL_PORT_3306_TCP_ADDR --port $MYSQL_PORT_3306_TCP_PORT -u $MYSQL_ENV_MYSQL_USER -p$MYSQL_ENV_MYSQL_PASSWORD"
 CMD="mysqladmin ${MYSQL_HOST_OPTS} status"
+AWS_PATH="which aws"
 
 echo "=> Creating backup script"
 rm -f /backup.sh
@@ -61,7 +62,7 @@ BACKUP_NAME=\$(date +\%Y.\%m.\%d.\%H\%M\%S)
 
 echo "Starting dump of ${MYSQLDUMP_DATABASE} database(s) from ${MYSQL_PORT_3306_TCP_ADDR}..."
 
-mysqldump ${MYSQL_HOST_OPTS} ${MYSQLDUMP_OPTIONS} ${MYSQLDUMP_DATABASE} | gzip | aws s3 cp - s3://${AWS_BUCKET}/${PREFIX}/\${BACKUP_NAME}.sql.gz
+mysqldump ${MYSQL_HOST_OPTS} ${MYSQLDUMP_OPTIONS} ${MYSQLDUMP_DATABASE} | gzip | $AWS_PATH s3 cp - s3://${AWS_BUCKET}/${PREFIX}/\${BACKUP_NAME}.sql.gz
 
 echo "Done!"
 
