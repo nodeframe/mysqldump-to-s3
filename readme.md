@@ -6,7 +6,7 @@ There are options where you can run this container script as a cron job.
 
 [![Docker Repository on Quay](https://quay.io/repository/nodeframe/mysqldump-to-s3/status "Docker Repository on Quay")](https://quay.io/repository/nodeframe/mysqldump-to-s3)
 
-##Options
+## Options
 To use this container, specify those environment variables
 
 | Variables                | Required? | Description                                                                                                                            |
@@ -25,17 +25,17 @@ To use this container, specify those environment variables
 
 For example of how to start this container, see below on the developing section
 
-###Use this image
+### Use this image
 pull this image from [quay.io](https://quay.io/repository/nodeframe/mysqldump-to-s3)
 
     docker pull quay.io/nodeframe/mysqldump-to-s3
 _______
 
-#Developing
+# Developing
 
 Feel free to config the script as a fork of your project, to test your development or configuration, you can use the following script
 
-###Run this MySQL server to be the source of the backup
+### Run this MySQL server to be the source of the backup
 
 This script help you to start the MySQL server as a docker container
 
@@ -54,7 +54,7 @@ To build this container, simply run this command on your project directory
     docker build -t mysql-s3 .
 
 
-###Start the container
+### Start the container
 
 After built the docker image, you might want to run the container to see if the backup works fine
 
